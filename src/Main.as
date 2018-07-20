@@ -85,6 +85,25 @@ package
 			CONFIG::desktop
 			{
 				stage.addEventListener(Event.RESIZE, handleResize);
+				stage.addEventListener(KeyboardEvent.KEY_DOWN, onDown);
+				stage.addEventListener(KeyboardEvent.KEY_UP, onUp);
+			}
+
+			var keys:Object = {};
+
+			function onDown(e:KeyboardEvent):void {
+				if( ! Boolean(e.keyCode in keys)) {
+
+					keys[e.keyCode] = true;
+					if (e.keyCode == 116)
+					{
+						control.saveceol();
+					}
+				}
+			}
+
+			function onUp(e:KeyboardEvent):void {
+				delete keys[e.keyCode];
 			}
 			
 			var tempbmp:Bitmap;

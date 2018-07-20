@@ -1,5 +1,6 @@
 ﻿public function input(key:KeyPoll):void {
 	var i:int, j:int, k:int;
+	var saving:Boolean;
 	
 	generickeypoll();
 	if (key.click || key.press 
@@ -715,8 +716,8 @@
 	}
 	
 	CONFIG::desktop {
-		if (key.isDown(Keyboard.ESCAPE)) {
-			NativeApplication.nativeApplication.exit(0);
-		}
+		//if (key.isDown(Keyboard.ESCAPE)) {
+		//	NativeApplication.nativeApplication.exit(0);
+		//}
 	}
 }
